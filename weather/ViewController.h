@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Client.h"
 
-@interface ViewController : UIViewController
-
-
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate, ClientDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 @end
 
