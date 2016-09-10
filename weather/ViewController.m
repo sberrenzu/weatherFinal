@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import "DetailViewController.h"
 
 #define LOCALCITY @"Auckland"
 
@@ -92,23 +93,28 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *weather = _weather[indexPath.row];
-    NSString *city = _city;
-    NSString *min = weather[@"temp"][@"min"];
-    NSString *max = weather[@"temp"][@"max"];
-    NSDictionary *weather_day =weather[@"weather"][0];
-    NSString *description = weather_day[@"description"];
-    NSString *timestamp = weather[@"dt"];
-
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    [formatter setTimeStyle:NSDateFormatterShortStyle];
-    [formatter setDateFormat:@"yyyyMMddHHMMss"];
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
-    NSString *dateString = [formatter stringFromDate:date];
-
-    NSString *titileString = [NSString stringWithFormat:@"City:%@, Date:%@, Min:%@,Max:%@, Description:%@",city, dateString, min, max,description];
-    UIAlertView *alert = [[ UIAlertView alloc]initWithTitle:@"Weather Detail" message:titileString delegate:self    cancelButtonTitle:@"OK"otherButtonTitles: nil];
-    [alert show];
+    DetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+    vc.detailTemp = [NSString stringWithFormat:@"%@", weather[@"temp"][@"day"]];
+    vc.detailCity = _city;
+    [self.navigationController pushViewController:vc animated:YES];
+//    NSDictionary *weather = _weather[indexPath.row];
+//    NSString *city = _city;
+//    NSString *min = weather[@"temp"][@"min"];
+//    NSString *max = weather[@"temp"][@"max"];
+//    NSDictionary *weather_day =weather[@"weather"][0];
+//    NSString *description = weather_day[@"description"];
+//    NSString *timestamp = weather[@"dt"];
+//
+//    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+//    [formatter setDateFormat:@"yyyyMMddHHMMss"];
+//    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[timestamp doubleValue]];
+//    NSString *dateString = [formatter stringFromDate:date];
+//
+//    NSString *titileString = [NSString stringWithFormat:@"City:%@, Date:%@, Min:%@,Max:%@, Description:%@",city, dateString, min, max,description];
+//    UIAlertView *alert = [[ UIAlertView alloc]initWithTitle:@"Weather Detail" message:titileString delegate:self    cancelButtonTitle:@"OK"otherButtonTitles: nil];
+//    [alert show];
 }
 
 @end

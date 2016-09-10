@@ -16,6 +16,7 @@
 		7E9785AD1D6A97530091581C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9785AC1D6A97530091581C /* Images.xcassets */; };
 		7E9785B01D6A97530091581C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9785AE1D6A97530091581C /* LaunchScreen.xib */; };
 		7E9785BC1D6A97530091581C /* weatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9785BB1D6A97530091581C /* weatherTests.m */; };
+		7EDA98CF1D8416DE00ABAF8A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA98CE1D8416DE00ABAF8A /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		7E9785B51D6A97530091581C /* weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9785BA1D6A97530091581C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E9785BB1D6A97530091581C /* weatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weatherTests.m; sourceTree = "<group>"; };
+		7EDA98CD1D8416DE00ABAF8A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7EDA98CE1D8416DE00ABAF8A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BCCCA17F8515052401D3C922 /* Pods-weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather.release.xcconfig"; path = "Pods/Target Support Files/Pods-weather/Pods-weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,8 @@
 				7E9785AC1D6A97530091581C /* Images.xcassets */,
 				7E9785AE1D6A97530091581C /* LaunchScreen.xib */,
 				7E97859F1D6A97530091581C /* Supporting Files */,
+				7EDA98CD1D8416DE00ABAF8A /* DetailViewController.h */,
+				7EDA98CE1D8416DE00ABAF8A /* DetailViewController.m */,
 			);
 			path = weather;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDA98CF1D8416DE00ABAF8A /* DetailViewController.m in Sources */,
 				7E9785A81D6A97530091581C /* ViewController.m in Sources */,
 				7E9785A51D6A97530091581C /* AppDelegate.m in Sources */,
 				7E68A2901D6EEF030008075E /* Client.m in Sources */,

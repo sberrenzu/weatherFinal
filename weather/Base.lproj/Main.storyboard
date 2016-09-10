@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Iwc-Tc-rAM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NfU-mG-Kkh">
+            <objects>
+                <navigationController id="Iwc-Tc-rAM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vkD-PX-acg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="nqh-ie-uUo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7r-So-7xM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="30"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -36,7 +52,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="akj-Ua-A7U"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Auckland" minimumFontSize="17" background="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-Mn-lCI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Auckland" minimumFontSize="17" background="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-Mn-lCI">
                                 <rect key="frame" x="30" y="25" width="546" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -66,6 +82,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="4JH-fm-l7X"/>
                     <connections>
                         <outlet property="searchField" destination="B1W-Mn-lCI" id="aIk-cm-53f"/>
                         <outlet property="tableView" destination="fAc-2G-5Np" id="zPy-Rd-ndJ"/>
@@ -73,7 +90,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="387"/>
+            <point key="canvasLocation" x="948" y="39"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="dE5-HD-wv7">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="kSD-QV-qeK" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="63i-Vx-dqt"/>
+                        <viewControllerLayoutGuide type="bottom" id="vMy-sT-I36"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lxa-hv-OBB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48a-CD-pD5">
+                                <rect key="frame" x="177" y="115" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-tP-HMw">
+                                <rect key="frame" x="245" y="115" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-pe-RhF">
+                                <rect key="frame" x="177" y="212" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-eS-BV0">
+                                <rect key="frame" x="245" y="212" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="48a-CD-pD5" firstAttribute="top" secondItem="63i-Vx-dqt" secondAttribute="bottom" constant="95" id="14e-ze-Q6K"/>
+                            <constraint firstItem="EB3-eS-BV0" firstAttribute="top" secondItem="SAs-tP-HMw" secondAttribute="bottom" constant="76" id="5Tu-6n-hP4"/>
+                            <constraint firstItem="48a-CD-pD5" firstAttribute="leading" secondItem="tkI-pe-RhF" secondAttribute="leading" id="67X-C1-9Xp"/>
+                            <constraint firstAttribute="centerX" secondItem="48a-CD-pD5" secondAttribute="centerX" multiplier="1.5" id="80F-50-hTe"/>
+                            <constraint firstItem="SAs-tP-HMw" firstAttribute="top" secondItem="63i-Vx-dqt" secondAttribute="bottom" constant="95" id="8Nc-OS-1ey"/>
+                            <constraint firstItem="SAs-tP-HMw" firstAttribute="leading" secondItem="48a-CD-pD5" secondAttribute="trailing" constant="115" id="KCa-pX-x1q"/>
+                            <constraint firstItem="EB3-eS-BV0" firstAttribute="leading" secondItem="tkI-pe-RhF" secondAttribute="trailing" constant="33" id="Lg7-Tq-LBg"/>
+                            <constraint firstItem="SAs-tP-HMw" firstAttribute="leading" secondItem="EB3-eS-BV0" secondAttribute="leading" id="Wtq-9B-vlm"/>
+                            <constraint firstItem="SAs-tP-HMw" firstAttribute="leading" secondItem="48a-CD-pD5" secondAttribute="trailing" constant="21" id="b9E-DN-aad"/>
+                            <constraint firstItem="tkI-pe-RhF" firstAttribute="top" secondItem="48a-CD-pD5" secondAttribute="bottom" constant="76" id="faB-j3-Mxr"/>
+                            <constraint firstAttribute="centerX" secondItem="SAs-tP-HMw" secondAttribute="centerX" multiplier="0.9" id="hiH-CP-z8e"/>
+                            <constraint firstItem="SAs-tP-HMw" firstAttribute="leading" secondItem="EB3-eS-BV0" secondAttribute="leading" id="jeq-R6-l2g"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KCa-pX-x1q"/>
+                                <exclude reference="hiH-CP-z8e"/>
+                                <exclude reference="jeq-R6-l2g"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="EB3-eS-BV0" id="Y73-FW-o1U"/>
+                        <outlet property="tempLabel" destination="SAs-tP-HMw" id="PdD-gc-BQx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gf-nB-JHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="52"/>
         </scene>
     </scenes>
     <resources>
